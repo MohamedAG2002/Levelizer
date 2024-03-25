@@ -106,14 +106,6 @@ bool save(Level& level) {
   return true;
 }
 
-Entity entity_create(Level& lvl, const std::string& name) {
-  Entity entt;
-  entt.name = name;
- 
-  lvl.entities[name] = entt;
-  return entt;
-}
-
 void entity_begin(Level& level, const std::string& name, const bool can_create) {
   // We couldn't find the entity and we can't create a new one with the same name
   if(level.entities.find(name) == level.entities.end() && !can_create) {

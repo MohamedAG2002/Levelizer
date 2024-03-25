@@ -1,5 +1,4 @@
 #include "parser.h"
-#include "lexer.h"
 #include "level.h"
 
 #include <vector>
@@ -46,6 +45,13 @@ static Token token_consume(Parser& parser) {
   
   parser.current++;
   return parser.tokens[parser.current - 1];
+}
+
+static Entity entity_create(Level& lvl, const std::string& name ) {
+  Entity entt = {name};
+  lvl.entities[name] = entt;
+  
+  return entt;
 }
 
 static void assign_expr(Parser& parser, Token& token, const std::string& scope, Level& lvl) {

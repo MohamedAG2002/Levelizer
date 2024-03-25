@@ -17,7 +17,6 @@ Level load(const std::string& path);
 void unload(Level& level);
 bool save(Level& level);
 
-Entity entity_create(Level& lvl, const std::string& name);
 void entity_begin(Level& level, const std::string& name, const bool can_create = true);
 void entity_end(Level& level);
 
