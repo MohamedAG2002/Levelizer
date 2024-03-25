@@ -74,7 +74,7 @@ static void str_lit(Lexer& lexer) {
   char_consume(lexer);
 
   // Only take the literal inside the ""
-  std::string text = lexer.source.substr(lexer.start + 1, (lexer.current - lexer.start) - 2);
+  std::string text = lexer.source.substr(lexer.start, (lexer.current - lexer.start));
   token_add(lexer, TOKEN_STRING_LIT, text);
 }
 

@@ -64,7 +64,7 @@ static void save_variable(Level& level, const std::string& name, const std::stri
 
 Level load(const std::string& path) {
   Level lvl;
-  lvl.name = path.substr(path.find_last_of('/'));
+  lvl.name = path.substr(path.find_last_of('/') + 1);
   lvl.path = path;
   lvl.current_entity = "global";
   read_file_contents(lvl.path, lvl.src);
@@ -159,7 +159,9 @@ void bool_set(Level& level, const std::string& name, const bool value, const boo
   }
 
   level.entities[level.current_entity].bools[name] = value;
-  save_variable(level, name, std::to_string(value));
+
+  std::string str_bool = value ? "true" : "false";
+  save_variable(level, name, str_bool);
 }
 
 void string_set(Level& level, const std::string& name, const std::string& value, const bool can_create) {
@@ -168,7 +170,7 @@ void string_set(Level& level, const std::string& name, const std::string& value,
   }
 
   level.entities[level.current_entity].strings[name] = value;
-  save_variable(level, name, value);
+  save_variable(level, name, "\"" + value + "\"");
 }
 
 const int& number_get(Level& level, const std::string& entt, const std::string& name) {
