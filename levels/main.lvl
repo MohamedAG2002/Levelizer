@@ -1,9 +1,0 @@
-level_type = 34 
-
-player {
-  x = 10.23000000
-  y = 10.1232323
-  health = 24
-  is_dead = false
-  id = "Player"
-}
