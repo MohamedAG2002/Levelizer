@@ -78,14 +78,6 @@ Level load(const std::string& path) {
   return lvl;
 }
 
-void unload(Level& level) {
-  for(auto& [key, value] : level.entities) {
-    entity_destroy(value);
-  }
- 
-  level.entities.clear();
-}
-
 bool save(Level& level) {
   std::ofstream file(level.path, std::ios::trunc);
 

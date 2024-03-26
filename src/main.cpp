@@ -45,5 +45,5 @@ int main() {
   printf("  position = %f, %f\n", player2.x_pos, player2.y_pos);
   printf("  health = %i\n", player2.health);
   printf("  id = %s\n", player2.id.c_str());
-  printf("  is_active = %i\n", player2.is_active);
+  printf("  is_active = %s\n", player2.is_active ? "true" : "false");
 }

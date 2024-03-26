@@ -1,0 +1,9 @@
+level_type = 1
+
+player {
+  pos_x = 100.000000
+  pos_y = 233.123505
+  health = 100
+  id = "Player"
+  is_active = true
+}

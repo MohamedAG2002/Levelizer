@@ -12,9 +12,7 @@ struct Level {
   std::unordered_map<std::string, Entity> entities;
 };
 
-// TODO: Maybe make every level heap-allocated instead of passing around a copy?
 Level load(const std::string& path);
-void unload(Level& level);
 bool save(Level& level);
 
 void entity_begin(Level& level, const std::string& name, const bool can_create = true);
